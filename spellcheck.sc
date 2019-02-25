@@ -1,3 +1,6 @@
+import scala.io.Source
+import edu.holycross.shot.cite
+
 val filepath:String = "texts/sherlock.txt"
 val myBook:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter(_.size > 0)
 
