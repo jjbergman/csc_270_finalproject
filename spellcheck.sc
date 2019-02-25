@@ -1,7 +1,7 @@
 import scala.io.Source
 import edu.holycross.shot.cite
 
-val filepath:String = "sherlock.txt"
+val filepath:String = "/vagrant/csc_270_finalproject/sherlock.txt"
 val myBook:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter(_.size > 0)
 
 val wordVec:Vector[String] = {
