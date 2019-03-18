@@ -1,0 +1,20 @@
+html {
+	background-color: white;
+	color: black;
+	font-size: 20pt;
+	font-family: 'Special Elite', cursive;
+  background-image: url(typewriter.jpg);
+}
+p {
+	margin-left: 60pt;
+  margin-right: 60pt;
+	font-style;
+  text-shadow: 2px 2px 2px #aaa;
+  line-height: 40px;
+}
+span.cite {
+  font-size: 40pt;
+  font-family: 'Oswald', sans-serif;
+}
+
+pick something different for the opening words
