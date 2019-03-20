@@ -12,7 +12,9 @@ p {
   text-shadow: 2px 2px 2px #aaa;
   line-height: 40px;
 }
-span.cite {
+span.cite, span.headword {
   font-size: 40pt;
 	font-family: 'Oswald', sans-serif;
 }
+
+play with the shadow effect- look at opacity
