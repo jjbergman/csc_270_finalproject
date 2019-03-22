@@ -5,7 +5,7 @@ case class IndexedLine(text:String, index:Int)
 case class ChapterHeading(title:String, index:Int)
 case class BookPara(chapterName:String, text:String, index:Int)
 
-val filepath:String = "sherlock.txt"
+val filepath:String = "/vagrant/csc_270_finalproject/sherlock.txt"
 val myLines:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter( _.size > 0 )
 
 // Grab line numbers
@@ -17,9 +17,9 @@ val indexedFileLines:Vector[IndexedLine] = myLines.zipWithIndex.map( ln => {
 // Filter out chapter headings
 
 val chapters:Vector[ChapterHeading] = {
-  indexedFileLines.filter(_.text.startsWith("Chapter")).map(c => {
+  indexedFileLines.filter(_.text.startsWith("Adventure")).map(c => {
     val index:Int = c.index
-    val newTitle:String = c.text.replaceAll("Chapter ","chpt_")
+    val newTitle:String = c.text.replaceAll("Adventure ","chpt_")
     new ChapterHeading(newTitle, index)
   })
 }
