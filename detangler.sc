@@ -1,5 +1,6 @@
 import scala.io.Source
 import edu.holycross.shot.cite._
+import java.io._
 
 case class IndexedLine(text:String, index:Int)
 case class ChapterHeading(title:String, index:Int)
