@@ -5466,36 +5466,36 @@
 [0m[[0m[0mdebug[0m] [0m[0mignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator[0m
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot.cite#xcite_2.12;4.0.2!xcite_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#orca_2.12;4.2.0!orca_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#greek_2.12;1.4.0!greek_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#gsphone_2.12;1.1.0!gsphone_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.furman.classics#citealign_2.12;0.5.0!citealign_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.homermultitext#hmt-textmodel_2.12;4.0.0!hmt-textmodel_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.furman.classics#citewriter_2.12;1.0.1!citewriter_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#cex_2.12;6.3.3!cex_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#seqcomp_2.12;1.0.0!seqcomp_2.12.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#scm_2.12;6.2.0!scm_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#citerelations_2.12;2.4.0!citerelations_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot.cite#xcite_2.12;4.0.2!xcite_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#ohco2_2.12;10.12.5!ohco2_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#greek_2.12;1.4.0!greek_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.5!jline.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#citeobj_2.12;7.3.0!citeobj_2.12.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 3375ms :: artifacts dl 48ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 compile produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 runtime produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 test produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 provided produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 optional produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 compile-internal produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 runtime-internal produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 test-internal produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 plugin produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 pom produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 scala-tool produced in /vagrant/csc_270_finalproject/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (3375ms resolve - 48ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.homermultitext#hmt-textmodel_2.12;4.0.0!hmt-textmodel_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.5!jline.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#ohco2_2.12;10.12.5!ohco2_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] edu.holycross.shot#citerelations_2.12;2.4.0!citerelations_2.12.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 1276ms :: artifacts dl 30ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 compile produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 runtime produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 test produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 provided produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 optional produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 compile-internal produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 runtime-internal produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 test-internal produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 plugin produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 pom produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hmttwiddle#hmttwiddle_2.12;0.0.1 scala-tool produced in /vagrant/james/target/scala-2.12/resolution-cache/reports/hmttwiddle-hmttwiddle_2.12-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (1276ms resolve - 30ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
 [0m[[0m[33mwarn[0m] [0m[0mThere may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.[0m

@@ -6,8 +6,8 @@ case class IndexedLine(text:String, index:Int)
 case class ChapterHeading(title:String, index:Int)
 case class BookPara(chapterName:String, text:String, index:Int)
 
-val filePath:String = "/vagrant/csc_270_finalproject/sherlock.txt"
-def saveString(s:String, filePath:String = filePath, fileName:String = "temp.txt"):Unit = {
+val filePath:String = "sherlock.txt"
+def saveString(s:String, filePath:String = filePath, fileName:String = "saved_sherock.txt"):Unit = {
   val pw = new PrintWriter(new File(filePath + fileName))
   for (line <- s.lines){
     pw.append(line)
@@ -16,7 +16,7 @@ def saveString(s:String, filePath:String = filePath, fileName:String = "temp.txt
   pw.close
 }
 
-val filepath:String = "/vagrant/csc_270_finalproject/sherlock.txt"
+val filepath:String = "sherlock.txt"
 val myLines:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter( _.size > 0 )
 
 // Grab line numbers
@@ -67,6 +67,15 @@ val allButTheLastChapter:Vector[BookPara] = chapterRanges.map(cr => {
   bookParas
 }).flatten
 
+val betterABTLC:Vector[BookPara] = allButTheLastChapter.zipWithIndex.map( a => {
+  // each "a" is a (BookPara, Int)
+  val thisIndex:Int = a._2 + 1
+  val oldPara:BookPara = a._1
+  val oldChap:String = oldPara.chapterName
+  val oldText:String = oldPara.text
+  BookPara(oldChap, oldText, thisIndex)
+})
+
 val theLastChapter:Vector[BookPara] = {
   val lastChaptHeading:String = chapterRanges.last.last.title
   // where the last chapter begins
@@ -103,7 +112,5 @@ val stringToSave:String = savableLines.mkString("\n")
 
 saveString(stringToSave)
 
-/* tr.catalog tells you the catalog information
-tr.corpus.nodes.sliding(10,10).toVector gives you lines chunked by 10
-tr.corpus ~~ CtsUrn(whatever citation you want) to print out sections from library
-*/
+
+
