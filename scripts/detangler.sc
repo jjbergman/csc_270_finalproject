@@ -106,4 +106,3 @@ saveString(stringToSave)
 /* tr.catalog tells you the catalog information
 tr.corpus.nodes.sliding(10,10).toVector gives you lines chunked by 10
 tr.corpus ~~ CtsUrn(whatever citation you want) to print out sections from library
-*/

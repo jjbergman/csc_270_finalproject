@@ -1,6 +1,0 @@
-Removed the metadata at the beginning and end, as well as the illustration captions.
-Removed the additional delineations in the first adventure's text.
-changed everything to be on one line in the text editor
-
-Performed the regex with find "\r\n([^0-9])" and replace " $1"
-Got rid of the spaces at the beginning of each line with find "^ +" and replace ""
