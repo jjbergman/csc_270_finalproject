@@ -111,6 +111,3 @@ val savableLines:Vector[String] = {
 val stringToSave:String = savableLines.mkString("\n")
 
 saveString(stringToSave)
-
-
-
