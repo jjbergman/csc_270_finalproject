@@ -16,7 +16,7 @@ def loadLibrary(fp:String = demoLib):CiteLibrary = {
 	library
 }
 
-def loadFile(fp:String = "../iliad_alignment/iliad_pope.txt"):Vector[String] = {
+def loadFile(fp:String = "../sherlock.txt"):Vector[String] = {
 	Source.fromFile(fp).getLines.toVector
 }
 
@@ -48,27 +48,20 @@ lazy val cr = lib.collectionRepository.get
 lazy val rs = lib.relationSet.get
 
 
-val johnStr:String = "urn:cts:greekLit:tlg0031.tlg004:"
-val englishStr:String = "urn:cts:greekLit:tlg0031.tlg004.kjv_fu:"
-val spanishStr:String = "urn:cts:greekLit:tlg0031.tlg004.reina:"
-val greekStr:String = "urn:cts:greekLit:tlg0031.tlg004.wh_fu:"
-
-// Here's how you can easily make a new URN:
-
-val oneVerseInThreeVersions:CtsUrn = CtsUrn(johnStr + "1.1")
-val oneVerseInOneVersion:CtsUrn = CtsUrn(englishStr + "1.1")
-val threeVersesInOneVersion:CtsUrn = CtsUrn(spanishStr + "1.1-1.2")
+val sherString:String = "urn:cts:fuTexts:doyle.holmes.fu:"
 
 // Here's how you can grab a chunk of your library USE THIS TO FIND PASSAGES
 
-val newCorpus:Corpus = tr.corpus ~~ oneVerseInThreeVersions
+val newCorpus:Corpus = tr.corpus
 // see it with…
 printCorpus(newCorpus)
 
-// Getting labels for a URN
+/* Getting labels for a URN
 tr.catalog.groupName(oneVerseInThreeVersions)
 tr.catalog.workTitle(oneVerseInThreeVersions)
 tr.catalog.versionLabel(oneVerseInThreeVersions)
+*/
 
-// Getting parts of the URN
+/* Getting parts of the URN
 threeVersesInOneVersion.passageComponent
+*/
