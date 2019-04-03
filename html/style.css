@@ -11,5 +11,12 @@ p {
 	font-style;
   line-height: 40px;
 }
-span.cite, span.headword {
+span.cite {
+	margin-right: 30pt;
 }
+div.nav {
+	float: right;
+}
+
+/*Add a nav button instead of links
+change my citations to something separate and have text in-line regardless of double digits (look at demo project and in-line blocks to figure this out)*/

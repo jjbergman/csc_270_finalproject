@@ -133,13 +133,13 @@ def buildSite:Unit = {
 		/* Navigation */
 		val prevLink:String = {
 			bkNum match {
-				case n if (n == 0) => { "" }
+				case n if (n == 1) => { "" }
 				case _ => { s"""<a href="book${bkNum - 1}.html">previous</a>""" }
 			}
 		}
 		val nextLink:String = {
 			bkNum match {
-				case n if (n == (bookChunks.size - 1)) => { "" }
+				case n if (n == (bookChunks.size)) => { "" }
 				case _ => { s"""<a href="book${bkNum + 1}.html">next</a>""" }
 			}
 		}
@@ -168,6 +168,7 @@ def buildSite:Unit = {
 			bookHeader +
 			containerOpen +
 			passages.mkString("\n") +
+			nav +
 			containerClose +
 			htmlBottom
 		}
