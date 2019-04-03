@@ -104,6 +104,7 @@ var htmlTop:String = s"""<!DOCTYPE html>
 	<title>${groupName}: ${workTitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 	<style>
 		STYLES_GO_HERE
 	</style>
