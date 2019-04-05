@@ -1,22 +1,30 @@
-html {
+body {
 	background-color: white;
 	color: black;
 	font-size: 20pt;
 	font-family: 'Special Elite', cursive;
   background-image: url(typewriter.jpg);
+	width: 80vw;
+	margin: 0 auto;
 }
 p {
-	margin-left: 60pt;
-  margin-right: 60pt;
-	font-style;
+  margin-right: 30pt;
   line-height: 40px;
 }
 span.cite {
-	margin-right: 30pt;
+	color:;
+	opacity: 0.5;
+	padding-right: 1em;
+	position:absolute;
+	left: 45px;
+	min-width: 4em;
+	font-size: 85%;
 }
 div.nav {
 	float: right;
 }
 
-/*Add a nav button instead of links
-change my citations to something separate and have text in-line regardless of double digits (look at demo project and in-line blocks to figure this out)*/
+/*
+Add a nav button instead of links? Only if it looks right
+fix adventure names to be Roman numerals
+*/
