@@ -16,7 +16,8 @@ span.cite {
 	opacity: 0.5;
 	padding-right: 1em;
 	position:absolute;
-	left: 45px;
+	left: 6rem;
+	align: right;
 	min-width: 4em;
 	font-size: 85%;
 }
