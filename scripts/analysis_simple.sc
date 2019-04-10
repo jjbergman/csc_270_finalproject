@@ -87,3 +87,6 @@ val analysisCorpus:Corpus = {
 	})
 	Corpus(nodeVector)
 }
+
+// ngram adventure by adventure?
+// can do a close read to figure out what's interesting
