@@ -17,6 +17,7 @@ val stopWords:Vector[String] = Vector("ourselves", "hers", "between", "yourself"
 
 /* Utilities */
 
+/*
 def showMe(v:Any):Unit = {
 	v match {
 		case _:Iterable[Any] => println(s"""----\n${v.asInstanceOf[Iterable[Any]].mkString("\n")}\n----""")
@@ -24,6 +25,7 @@ def showMe(v:Any):Unit = {
 		case _ => println(s"-----\n${v}\n----")
 	}
 }
+*/
 
 def loadLibrary(fp:String):CiteLibrary = {
 	val library = CiteLibrary(Source.fromFile(fp).getLines.mkString("\n"),"#",",")
