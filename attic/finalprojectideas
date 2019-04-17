@@ -1,0 +1,12 @@
+https://provalisresearch.com/products/content-analysis-software/wordstat-dictionary/wordnet-based-categorization-dictionary/
+
+Holmes is all about the physical world. The above website offers a download of a “categorization dictionary” (https://provalisresearch.com/Download/WordNet2.zip). I looked at the data you get, and it should be possible to use it to:
+
+1. Grab all nouns from your Holmes text,
+2. Categorize them according to “animal”, “artifact”, etc.
+
+The way the categories appear in the text files suggest that a modification of your “detangler” script would chunk them into groups.
+
+Then it is a simple matter of mapping words-in-Holmes-citableNodes <—> noun-categories.
+
+A story-by-story histogram of noun-categories might be interesting, as would a histogram of category-occurances within a story (I bet the clues tend to show up in the middle and at the end).

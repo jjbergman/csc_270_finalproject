@@ -38,7 +38,7 @@ def saveString(s:String, filePath:String = "", fileName:String = ""):Unit = {
 	pw.close
 }
 
-val splitters:String = """[\[\])(:·⸁.,·”“;;   "?·!–—⸂⸃]"""
+val splitters:String = """[\[\])(:·⸁.,·;;   "?·!–—⸂⸃]"""
 val sentencePunct:String = """[.;?!]"""
 
 
@@ -58,11 +58,11 @@ def countSyllables(s:String):(String, Int) = {
 
 /* Project-specific CEX Stuff */
 
-val myCexFile:String = "sherlock.cex"
+val myCexFile:String = "pope_iliad.cex"
 
 lazy val lib = loadLibrary(myCexFile)
 lazy val tr = lib.textRepository.get
-lazy val doyleCorpus = tr.corpus
+lazy val popeCorpus = tr.corpus
 
 	}).mkString("\n")
 
