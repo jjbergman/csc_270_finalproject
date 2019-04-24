@@ -13,8 +13,8 @@ val wordVec:Vector[String] = {
   tokenizedVector
 }
 
-val dictpath:String = "/vagrant/csc_270_finalproject/attic/wordnet/nounlist.txt"
-val dictEntries:Vector[String] = Source.fromFile(dictpath).getLines.toVector.filter(_.size > 0)
+val nounlist:String = "/vagrant/csc_270_finalproject/attic/wordnet/nounlist.txt"
+val dictEntries:Vector[String] = Source.fromFile(nounlist).getLines.toVector.filter(_.size > 0)
 
 val nouns:Vector[String] = wordVec.filter( w => {
   (dictEntries.contains(w.toUpperCase) == true)
