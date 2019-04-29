@@ -69,13 +69,97 @@ val citableWords:Vector[(String, Vector[CtsUrn])] = {
 
 // saveString(nouns) ?
 
-// Categorize them according to “animal”, “artifact”, etc.
+// Categorize them according to “animal”, “artifact”, etc. mapping words-in-Holmes-citableNodes <—> noun-categories
 case class IndexedLine(text:String, index:Int)
 case class ChapterHeading(title:String, index:Int)
 case class BookPara(chapterName:String, text:String, index:Int)
 
+val theNounList:Vector[String] = Source.fromFile(nounlist).getLines.toVector.filter( _.size > 0 )
+
+// Grab line numbers
+
+val indexedFileLines:Vector[IndexedLine] = theNounList.zipWithIndex.map( ln => {
+  new IndexedLine(ln._1, ln._2)
+})
+
+// Filter out chapter headings
+
+val chapters:Vector[ChapterHeading] = {
+  indexedFileLines.filter(_.text.startsWith("NOUN")).map(c => {
+    val index:Int = c.index
+    val newTitle:String = c.text.replaceAll("NOUN ","")
+    new ChapterHeading(newTitle, index)
+  })
+}
+
+val realParagraphs:Vector[IndexedLine] = {
+  indexedFileLines.filter(_.text.startsWith("NOUN") == false )
+}
 
 
-// mapping words-in-Holmes-citableNodes <—> noun-categories
+// find where each chapter begins and ends!
+val chapterRanges:Vector[Vector[ChapterHeading]] = chapters.sliding(2,1).toVector
+
+
+val allButTheLastChapter:Vector[BookPara] = chapterRanges.map(cr => {
+  val thisChapt:ChapterHeading = cr.head
+  // the line-number in the original file where this chapter begins
+  val thisChaptLineNum:Int = thisChapt.index
+
+  val nextChapt:ChapterHeading = cr.last
+  // the line-number in the original file where the next chapter begins
+  val nextChaptLineNum:Int = nextChapt.index
+
+  // the paragraphs of my text that belong to this chapter
+  val chapterParas:Vector[IndexedLine] = {
+    realParagraphs.filter( il => {
+      (( il.index > thisChaptLineNum) & (il.index < nextChaptLineNum ) )
+    })
+  }
+
+  val bookParas:Vector[BookPara] = chapterParas.zipWithIndex.map (cp => {
+    val thisIndex:Int = cp._2 + 1
+    new BookPara( thisChapt.title, cp._1.text, thisIndex)
+  })
+  // return that value
+  bookParas
+}).flatten
+
+val theLastChapter:Vector[BookPara] = {
+  val lastChaptHeading:String = chapterRanges.last.last.title
+  // where the last chapter begins
+  val lastChaptLineNum:Int = chapterRanges.last.last.index
+
+  // filter out all paragraphs that are before the last chapter
+  val chapterParas:Vector[IndexedLine] = {
+    realParagraphs.filter( il => {
+      (il.index > lastChaptLineNum)
+    })
+  }
+
+  // attach the title of the last chapter to each
+  val bookParas:Vector[BookPara] = chapterParas.map( cp => {
+    new BookPara( lastChaptHeading, cp.text, cp.index)
+  })
+
+  bookParas
+}
+
+val allChapterLines:Vector[BookPara] = {
+  allButTheLastChapter ++ theLastChapter
+}
+
+// map citableWords into this
+val catPreMap:Vector[(String, Vector[(String, String, Int])] = {
+allChapterLines.groupBy(_._1).toVector
+}
+
+val catMap:Vector[(String,Vector[String])] = {
+catPreMap.map( cpm => {
+cpm.map(_._2)
+})
+}
+
+
 
 // A story-by-story histogram of noun-categories might be interesting, as would a histogram of category-occurrences within a story
