@@ -1,0 +1,32 @@
+body {
+	background-color: white;
+	color: black;
+	font-size: 20pt;
+	font-family: 'Special Elite', cursive;
+  background-image: url(typewriter.jpg);
+	width: 80vw;
+	margin: 0 auto;
+}
+p {
+  margin-right: 30pt;
+  line-height: 40px;
+}
+span.cite {
+	color:;
+	opacity: 0.5;
+	padding-right: 1em;
+	position:absolute;
+	left: 6rem;
+	align: right;
+	min-width: 4em;
+	font-size: 85%;
+}
+div.nav {
+	float: right;
+}
+
+/*
+Add a nav button instead of links? Only if it looks right
+fix adventure names to be Roman numerals
+position:relative for the citations?
+*/

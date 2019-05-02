@@ -1,0 +1,45 @@
+scala> :load scripts/sentence_work.sc
+In the above, what does :load mean?
+Answer: loads the file.
+
+scala> popeCorpus
+In the above, what is this value identifying?
+Answer: tr.corpus, which is lib.textRepository.get, which is loadLibrary(myCexFile). So all together it is loadLibrary(pope_iliad.cex).textRepository.get.corpus. Cex serializes complicated data strings in plain text.
+
+scala> popeCorpus.nodes
+In the above, what kind of data-structure is identified?
+Answer: creates a vector of the smallest citable unit and the text it is with. Node is smallest citable unit.
+
+scala> val resX = popeCorpus.urns.map(_.collapsePassageBy(1))
+What does the above command do? An explanation may take a few sentences.
+Answer: This command collapses the citations by one level of hierarchy. So, the citations do not include the line number within the stanza, but rather just to stanza. This is a map, so it is done to all the urns in the corpus. Takes only the Urns. Lists all of the Urns still.
+
+scala> val resY = resX.distinct
+What does the above do?
+Answer: Only shows the distinct stanzas because those are the unique data sets.
+Use the distinct method to find the distinct/unique characters in a String. Works with any vector. Depends on nature of things in the list.
+
+popeCorpus ~~ resY(0)
+popeCorpus ~~ resY(1)
+What am I doing to popeCorpus with these ~~ methods? What is the result of each of these commands?
+Answer: ~~ commands print out a certain section from the corpus- pulls out stuff that is tested positive. The result is a printout of the first stanza, 0 on the list, and the second stanza, because it is grabbing the full printout of the distinct stanzas from the urns.
+
+~~ checks what is similar to the search and grabs it. popeCorpus.nodes.filter(_.urn ~~ u2) is the same thing. Checks for all the urns that are similar to the urn you give and pulls them out.
+
+scala> val resZ = (popeCorpus ~~ resY(0)).nodes
+The above is a slight addition to the previous step. What happens here?
+Makes a vector of the printed lines, rather than giving them as one unit.
+
+scala> val resA = resZ.map(_.text)
+And what did the above do?
+Maps the corpus to only print out the text, rather than the citations as well.
+
+scala> val stanzaProse = resA.mkString(" ")
+What does `.mkString()` do to a Collection? You may need to look this up.
+Answer: Takes a vector and turns it into a string and adds a space in between each line. Any string can be used as a separating character.
+
+~~ match Urns with similarities, checks if something is true or not. On Urn level it is true or false.
+
+When you ~~ a corpus, it gets a new corpus that gets the stuff that tests positive for the stuff you gave it. Short hand way of pulling bits of text from a larger library of text.
+
+Rest- Representational State Transfer- "you ask for something with an http:// request, and get the same answer to the same question every time."
