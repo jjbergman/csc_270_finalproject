@@ -150,7 +150,7 @@ val allChapterLines:Vector[BookPara] = {
 }
 
 // map citableWords into this
-val catPreMap:Vector[(String, Vector[(String, String, Int])] = {
+val catPreMap:Vector[(String, Vector[(String, String, Int)])] = {
 allChapterLines.groupBy(_._1).toVector
 }
 
