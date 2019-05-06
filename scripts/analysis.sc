@@ -12,7 +12,7 @@ import edu.furman.classics.citealign._
 import java.util.Calendar
 
 // Grab all nouns from the Holmes text
-val filepath:String = "sherlock.txt"
+val filepath:String = "attic/sherlock.txt"
 val myBook:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter(_.size > 0)
 
 
