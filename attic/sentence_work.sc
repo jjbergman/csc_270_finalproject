@@ -58,7 +58,7 @@ def countSyllables(s:String):(String, Int) = {
 
 /* Project-specific CEX Stuff */
 
-val myCexFile:String = "pope_iliad.cex"
+val myCexFile:String = "sherlock.cex"
 
 lazy val lib = loadLibrary(myCexFile)
 lazy val tr = lib.textRepository.get
