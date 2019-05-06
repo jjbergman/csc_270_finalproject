@@ -12,7 +12,7 @@ import edu.furman.classics.citealign._
 import java.util.Calendar
 
 // Grab all nouns from the Holmes text
-val filepath:String = "/vagrant/csc_270_finalproject/sherlock.txt"
+val filepath:String = "sherlock.txt"
 val myBook:Vector[String] = Source.fromFile(filepath).getLines.toVector.filter(_.size > 0)
 
 val wordVec:Vector[String] = {
@@ -22,7 +22,7 @@ val wordVec:Vector[String] = {
   tokenizedVector
 }
 
-val nounlist:String = "/vagrant/csc_270_finalproject/attic/wordnet/nounlist.txt"
+val nounlist:String = "attic/wordnet/nounlist.txt"
 val dictEntries:Vector[String] = Source.fromFile(nounlist).getLines.toVector.filter(_.size > 0)
 
 val nouns:Vector[String] = wordVec.filter( w => {
@@ -66,8 +66,6 @@ val citableWords:Vector[(String, Vector[CtsUrn])] = {
     (w, justUrns)
   })
 }
-
-// saveString(nouns) ?
 
 // Categorize them according to “animal”, “artifact”, etc. mapping words-in-Holmes-citableNodes <—> noun-categories
 case class IndexedLine(text:String, index:Int)
@@ -151,7 +149,7 @@ val allChapterLines:Vector[BookPara] = {
 
 // map citableWords into this
 val catPreMap:Vector[(String, Vector[(String, String, Int)])] = {
-allChapterLines.groupBy(_._1).toVector
+allChapterLines.groupBy(_.text).toVector
 }
 
 val catMap:Vector[(String,Vector[String])] = {
@@ -159,6 +157,8 @@ catPreMap.map( cpm => {
 cpm.map(_._2)
 })
 }
+
+// How does english work without a lemmatizer? Cool thing would be replacing every word with the categories and looking at that
 
 
 
