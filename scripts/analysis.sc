@@ -137,6 +137,7 @@ val p:CitableNode = (doyleCorpus ~~ u).nodes.head
 
 val toks:Vector[String] = dePunc(p.text).split(" ").toVector
 
+// each noun in the passage
 val filteredTokens:Vector[String] = {
   toks.filter( t => {
     val tt:String = t.toUpperCase
@@ -144,6 +145,7 @@ val filteredTokens:Vector[String] = {
   })
 }
 
+// just the category for each noun
 val cats:Vector[String] = {
   filteredTokens.map( t => {
     allCategorizedNouns.filter(_.noun == t.toUpperCase).head.category

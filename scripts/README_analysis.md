@@ -29,6 +29,6 @@ Beyond analyzing the entirety of the text instead of simply the nouns, there are
 
 - A story-by-story histogram of noun categories could prove interesting, as the onus of this analysis was to discover how Sherlock Holmes solves his mysteries. It would be useful to examine what types of nouns are used as his clues and which ones he relies upon to resolve each case. Perhaps he solves each case differently, or a pattern emerges.
 
-- Another histogram of category-occurrences within a story might be interesting, as
+- Another histogram of category-occurrences within a story might be interesting, as there might be a preponderance of a certain type of evidence in a particular adventure.
 
 - Finally, this analysis could be used to compare *The Adventures of Sherlock Holmes* with other stories or genres of novels. This analysis can create a basic structure of a story, including for each sentence but also for the whole story. This analysis could be used to look at how different authors write or even to create a computer generated story based on common syntax and semantic verbiage.
