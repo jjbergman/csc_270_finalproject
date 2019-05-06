@@ -1,4 +1,4 @@
-# An Analysis of *The Adventures of Sherlock Holmes*
+# An Analysis of *The Adventures of Sherlock Holmes* by Sir Arthur Conan Doyle
 
 ### Overview
 This project was undertaken at Furman University for the CSC-270 class, "Computational Approaches to the Humanities", in the spring of 2019. The repository contains all of the project files that were used.
