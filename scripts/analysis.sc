@@ -60,7 +60,7 @@ val indexedNounVec:Vector[IndexedLine] = nounVec.zipWithIndex.map( ln => {
   new IndexedLine(ln._1, ln._2)
 })
 
-// Filter out chapter headings
+// Filter out category headings
 
 val categoryHeaders:Vector[ChapterHeading] = {
   indexedNounVec.filter(_.text.startsWith("NOUN.")).map(c => {
@@ -74,20 +74,20 @@ val actualNouns:Vector[IndexedLine] = {
   indexedNounVec.filter(_.text.startsWith("NOUN.") == false )
 }
 
-// find where each chapter begins and ends!
+// find where each category begins and ends
 val categoryRanges:Vector[Vector[ChapterHeading]] = categoryHeaders.sliding(2,1).toVector
 
 
 val allButTheLastCategory:Vector[NounCategorization] = categoryRanges.map(cr => {
   val thisCat:ChapterHeading = cr.head
-  // the line-number in the original file where this chapter begins
+  // the line-number in the original file where this category begins
   val thisCatLineNum:Int = thisCat.index
 
   val nextCat:ChapterHeading = cr.last
-  // the line-number in the original file where the next chapter begins
+  // the line-number in the original file where the next category begins
   val nextCatLineNum:Int = nextCat.index
 
-  // the paragraphs of my text that belong to this chapter
+  // the nouns in the text that belong to this category
   val categoriedNounLines:Vector[IndexedLine] = {
     actualNouns.filter( il => {
       (( il.index > thisCatLineNum) & (il.index < nextCatLineNum ) )
@@ -104,17 +104,17 @@ val allButTheLastCategory:Vector[NounCategorization] = categoryRanges.map(cr => 
 
 val theLastCategory:Vector[NounCategorization] = {
   val lastCatHeading:String = categoryRanges.last.last.title
-  // where the last chapter begins
+  // where the last category begins
   val lastCatLineNum:Int = categoryRanges.last.last.index
 
-  // filter out all paragraphs that are before the last chapter
+  // filter out all nouns that are before the last category
   val categoriedNounLines:Vector[IndexedLine] = {
     actualNouns.filter( il => {
       (il.index > lastCatLineNum)
     })
   }
 
-  // attach the title of the last chapter to each
+  // attach the title of the last category to each
   val categorizedNouns:Vector[NounCategorization] = categoriedNounLines.map( cp => {
     new NounCategorization( lastCatHeading, cp.text, cp.index)
   })
@@ -122,6 +122,8 @@ val theLastCategory:Vector[NounCategorization] = {
   categorizedNouns
 }
 
+
+// print the categorized nouns
 val allCategorizedNouns:Vector[NounCategorization] = {
   allButTheLastCategory ++ theLastCategory
 }
@@ -129,7 +131,7 @@ val allCategorizedNouns:Vector[NounCategorization] = {
 def dePunc(s:String):String = s.replaceAll("""[,.’‘'?:;!"”“_-]"""," ").replaceAll(" +"," ")
 
 
-
+// look at an example passage
 val u:CtsUrn = CtsUrn("urn:cts:fuTexts:doyle.holmes.fu:I.2")
 val p:CitableNode = (doyleCorpus ~~ u).nodes.head
 
@@ -148,6 +150,8 @@ val cats:Vector[String] = {
   })
 }
 
+
+// do this to the entire corpus
 val mappedCorpus:Corpus = {
   val nodes:Vector[CitableNode] = doyleCorpus.nodes.map( n => {
      val u:CtsUrn = n.urn
@@ -157,7 +161,7 @@ val mappedCorpus:Corpus = {
             val tt:String = t.toUpperCase
             allCategorizedNouns.filter(_.noun == tt).size > 0
         })
-     } 
+     }
      val cats:Vector[String] = {
         filteredTokens.map( t => {
           allCategorizedNouns.filter(_.noun == t.toUpperCase).head.category
@@ -171,23 +175,3 @@ val mappedCorpus:Corpus = {
 }
 
 val newCex:String = mappedCorpus.cex("#")
-
-//val newString:String = filteredTokens.mkString(" ")
-//val newUrn:CtsUrn = u.addExemplar("nouns")
-
-
-
-// map citableWords into this
-/*
-val catPreMap:Vector[(String, Vector[BookPara])] = {
-allChapterLines.groupBy(_.text).toVector
-}
-
-val catMap:Vector[(String,Vector[String])] = {
-catPreMap.map( cpm => {
-cpm.map(_._2)
-})
-}
-*/
-
-// A story-by-story histogram of noun-categories might be interesting, as would a histogram of category-occurrences within a story
